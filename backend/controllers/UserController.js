@@ -179,5 +179,23 @@ module.exports = class UserController {
 
     }
 
+    static async getUserById(req, res) {
+
+        const id = req.params.id;
+
+        // Pegando o usuário pelo id e, se o usuário existir, eliminando a senha
+        const user = await User.findById(id).select("-password");
+
+        if(!user) {
+
+            res.status(422).json({ message: "Usuário não encontrado!" })
+
+            return;
+
+        }
+
+        res.status(200).json({ user });
+
+    }
 
 }
