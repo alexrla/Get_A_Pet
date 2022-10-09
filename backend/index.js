@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());
 
 // Liberando o "origin", a acessar a API
-app.use(cors({ credentials: true, origin: process.env.ORIGIN_IP }));
+app.use(cors({ credentials: true, origin: process.env.ORIGIN_HOST }));
 
 app.use(express.static("public"));
 
