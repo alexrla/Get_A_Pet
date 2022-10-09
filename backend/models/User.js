@@ -32,5 +32,6 @@ const User = mongoose.model(
 module.exports = User;
 
 /*
-        - timestamps: cria dois novos campos;
+        - timestamps: cria dois novos campos (createdAt e 
+        updateAt);
 */
