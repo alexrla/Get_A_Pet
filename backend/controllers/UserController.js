@@ -9,6 +9,7 @@ dotenv.config();
 // helpers
 const createUserToken = require("../helpers/create-user-token");
 const getToken = require("../helpers/get-token");
+const getUserByToken = require("../helpers/get-user-by-token");
 
 module.exports = class UserController {
 
@@ -200,7 +201,91 @@ module.exports = class UserController {
 
     static async editUser(req, res) {
 
-        res.status(200).json({ message: "Deu certo o update!"})
+        const id = req.params.id;
+
+        const { name, email, password, confirmPassword, phone } = req.body;
+
+        const token = getToken(req);
+
+        const usersData = await getUserByToken(token);
+
+        const user = usersData[0];
+
+        let image = "";
+
+        // Verificando a existência do usuário
+        if(!user) {
+
+            res.status(422).json({ message: "Usuário não encontrado!" });
+
+            return;
+
+        }
+
+        // validações
+        if(!name) {
+
+            res.status(422).json({ message: "O nome é obrigatório!" });
+            
+            return;
+
+        }
+
+        if(!email) {
+
+            res.status(422).json({ message: "O e-mail é obrigatório!" });
+            
+            return;
+
+        }
+
+        if(!password) {
+
+            res.status(422).json({ message: "A senha é obrigatória!" });
+            
+            return;
+
+        }
+
+        if(!confirmPassword) {
+
+            res.status(422).json({ message: "Confirme sua senha!" });
+            
+            return;
+
+        }
+
+        if(!phone) {
+
+            res.status(422).json({ message: "O telefone é obrigatório!" });
+            
+            return;
+
+        }
+
+        if(password != confirmPassword) {
+
+            res.status(422).json({ message: "A senha e a confirmação de senha, precisam ser iguais!" });
+            
+            return;
+
+        }
+
+        // Verificiando se o email atualizado, já é de um usuário cadastrado
+        const userExists = await User.findOne({ email: email });
+
+        if(user.email !== email && userExists) {
+
+            res.status(422).json({ message: "Utilize outro e-mail!" });
+
+            return;
+
+        }
+
+        user.name = name;
+        user.email = email;
+
+
 
     }
 
