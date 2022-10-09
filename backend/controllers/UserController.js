@@ -201,8 +201,6 @@ module.exports = class UserController {
 
     static async editUser(req, res) {
 
-        const id = req.params.id;
-
         const { name, email, password, confirmPassword, phone } = req.body;
 
         const token = getToken(req);
@@ -211,7 +209,11 @@ module.exports = class UserController {
 
         const user = usersData[0];
 
-        let image = "";
+        if(req.file)    {
+
+            user.image = req.file.filename;
+
+        }
 
         // Verificando a existência do usuário
         if(!user) {
