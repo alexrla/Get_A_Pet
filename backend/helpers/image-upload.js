@@ -29,7 +29,12 @@ const imageStore = multer.diskStorage({
 
             - A data vem em milisegundos;
         */
-        myCallback(null, Date.now() + path.extname(file.originalname));
+        myCallback(
+            null, 
+            Date.now() + 
+            String(Math.floor(Math.random() * 1000)) + 
+            path.extname(file.originalname)
+        );
 
     }
 });
