@@ -18,7 +18,7 @@ const getUserByToken = async(token) => {
 
     const userId = decoded.id;
 
-    const user = await User.find({ _id: userId });
+    const user = await User.findOne({ _id: userId });
 
     return user;
 

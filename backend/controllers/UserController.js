@@ -205,9 +205,7 @@ module.exports = class UserController {
 
         const token = getToken(req);
 
-        const usersData = await getUserByToken(token);
-
-        const user = usersData[0];
+        const user = await getUserByToken(token);
 
         if(req.file)    {
 
