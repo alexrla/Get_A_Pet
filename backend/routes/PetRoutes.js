@@ -19,5 +19,6 @@ router.get(
     verifyToken, 
     PetController.getAllUserAdoptions
 );
+router.get("/:id", PetController.getPetById);
 
 module.exports = router;
