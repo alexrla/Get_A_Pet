@@ -1,3 +1,3 @@
 - **`cors`: utilizado para podermos mandarmos requisições para o mesmo domínio (existe um problema quando lidamos com back e front no mesmo servidor,... como as duas vem do `localhost`, acaba gerando um problema);**
-- **`jsonwebtoken`: utilizado para realizarmos a comuncação com o token, onde atenticamos e devolvemos o token (iremos permanecer autenticado, por meio do envio do token para o backend);**
+- **`jsonwebtoken`: utilizado para realizarmos a comunicação com o token, onde autenticamos e devolvemos o token (iremos permanecer autenticado, por meio do envio do token para o backend);**
 - **`multer`: utilizado para o upload de fotos;**
