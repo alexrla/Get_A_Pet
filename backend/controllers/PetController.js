@@ -15,9 +15,6 @@ module.exports = class PetController {
 
         const available = true;
 
-        // Upload de imagens
-
-
         // Validações
         if(!name) {
 
@@ -153,7 +150,7 @@ module.exports = class PetController {
 
         }
 
-        const pet = await Pet.findOne({ _id: ObjectId(id) });
+        const pet = await Pet.findOne({ _id: id });
 
         if(!pet) {
 
@@ -165,6 +162,49 @@ module.exports = class PetController {
 
         res.status(200).json({
             pet
+        });
+
+    }
+
+    static async removePetById(req, res) {
+
+        const id = req.params.id;
+
+        if(!ObjectId.isValid(id)) {
+
+            res.status(422).json({
+                message: "ID inválido!"
+            });
+
+            return;
+
+        }
+
+        const pet = await Pet.findOne({ _id: id });
+
+        if(!pet) {
+
+            res.status(404).json({
+                message: "Pet não encontrado!"
+            });
+
+        }
+
+        const token = getToken(req);
+        const user = await getUserByToken(token);
+
+        if(pet.user._id.toString() !== user._id.toString()) {
+
+            res.status(422).json({
+                message: "Houve um problema em processar a sua solicitação, tente novamente mais tarde!"
+            });
+
+        }
+
+        await Pet.findByIdAndRemove(id);
+
+        res.status(200).json({
+            message: "Pet removido com sucesso!"
         });
 
     }
