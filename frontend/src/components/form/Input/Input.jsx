@@ -20,6 +20,8 @@ const Input = ({
                 onChange={handleOnChange}
                 value={value}
                 {...(multiple ? {multiple} : "")}
+
+                autoComplete={type="password" ? "on" : ""}
             />
         </div>
     );

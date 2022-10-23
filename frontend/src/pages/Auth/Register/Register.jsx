@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import { Link } from "react-router-dom";
 
 import Input from "../../../components/form/Input/Input";
@@ -7,14 +9,26 @@ import styles from "../../../components/form/Form.module.css";
 
 const Register = () => {
 
+    const [ user, setUser ] = useState({});
+
     function handleChange(event) {
+
+        setUser({...user, [event.target.name]: event.target.value});
+
+    }
+
+    function handleSubmit(event) {
+
+        event.preventDefault();
+
+        console.log(user);
 
     }
 
     return (
         <section className={styles.form_container}>
             <h1>Realizar Cadastro</h1>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <Input
                     text="Nome"
                     type="text"
