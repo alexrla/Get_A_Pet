@@ -10,18 +10,23 @@ import Home from "./pages/Home/Home";
 import Login from "./pages/Auth/Login/Login";
 import Register from "./pages/Auth/Register/Register";
 
+// Context
+import { UserProvider } from "./context/UserContext";
+
 const App = () => {
   return (
     <BrowserRouter>
-      <Navbar />
-      <Container>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/sign-in" element={<Login />} />
-          <Route path="/sign-up" element={<Register />} />
-        </Routes>
-      </Container>
-      <Footer />
+      <UserProvider>
+        <Navbar />
+        <Container>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/sign-in" element={<Login />} />
+            <Route path="/sign-up" element={<Register />} />
+          </Routes>
+        </Container>
+        <Footer />
+      </UserProvider>
     </BrowserRouter>
   );
 }
