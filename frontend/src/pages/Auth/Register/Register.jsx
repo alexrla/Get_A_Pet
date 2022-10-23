@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 
 import { Link } from "react-router-dom";
 
@@ -7,9 +7,14 @@ import Input from "../../../components/form/Input/Input";
 // CSS
 import styles from "../../../components/form/Form.module.css";
 
+// Context
+import { Context } from "../../../context/UserContext";
+
 const Register = () => {
 
     const [ user, setUser ] = useState({});
+
+    const { register } = useContext(Context);
 
     function handleChange(event) {
 
@@ -21,7 +26,7 @@ const Register = () => {
 
         event.preventDefault();
 
-        console.log(user);
+        register(user);
 
     }
 

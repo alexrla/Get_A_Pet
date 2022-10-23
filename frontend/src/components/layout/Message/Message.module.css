@@ -1,0 +1,29 @@
+.message {
+    border: 1px solid #000;
+
+    border-radius: 5px;
+    
+    padding: 1em;
+
+    margin: 1.2em auto 0;
+
+    max-width: 60%;
+
+    text-align: center;
+}
+
+.sucess {
+    background-color: #D4EDDA;
+
+    border-color: #C3E6CB;
+
+    color: #155724;
+}
+
+.error {
+    background-color: #F8D7DA;
+
+    border-color: #F5C6CB;
+
+    color: #721C24;
+}

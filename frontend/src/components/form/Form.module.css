@@ -8,8 +8,8 @@
     max-width: 300px;
 }
 
-.form_container h1, .form_container p {
-    padding-top: 1em;
+.form_container h1 {
+    padding-top: .5em;
 
     text-align: center;
 }
@@ -38,4 +38,10 @@
 
 .form_container input[type="submit"]:hover {
     background-color: #1C8A42;
+}
+
+.form_container p {
+    padding-top: 1.5em;
+
+    text-align: center;
 }
