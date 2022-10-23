@@ -20,4 +20,4 @@ app.use(express.static("public"));
 app.use("/users", UserRoutes);
 app.use("/pets", PetRoutes);
 
-app.listen(5000, console.log("App funcionando!"));
+app.listen(process.env.PORT, console.log("App funcionando!"));
