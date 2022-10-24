@@ -31,7 +31,7 @@ const Navbar = () => {
                             <li>
                                 <Link to="/sign-in">Dashboard</Link>
                             </li>
-                            <li onClick={logout}>
+                            <li onClick={logout} className={styles.logout}>
                                 Sair
                             </li>
                         </>

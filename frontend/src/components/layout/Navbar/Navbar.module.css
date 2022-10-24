@@ -5,6 +5,8 @@
 
     display: flex;
 
+    height: 100px;
+
     justify-content: space-between;
 
     padding: 1em 1.5em;
@@ -19,7 +21,7 @@
 .navbar_logo img {
     margin-right: .8em;
 
-    width: 40px;
+    width: 50px;
 }
 
 .navbar ul {
@@ -37,6 +39,8 @@
 
     cursor: pointer;
 
+    font-size: 18px;
+
     font-weight: bold;
 
     padding: .5em .8em;
@@ -46,7 +50,7 @@
     transition: .5s;
 }
 
-.navbar li:hover > a {
+.navbar li:hover > a, .logout:hover {
     background-color: #16479D;
 
     color: #FFF;
