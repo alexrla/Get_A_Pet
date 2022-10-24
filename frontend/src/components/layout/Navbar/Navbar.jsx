@@ -29,7 +29,7 @@ const Navbar = () => {
                     authenticated ? (
                         <>
                             <li>
-                                <Link to="/sign-in">Dashboard</Link>
+                                <Link to="/user/profile">Perfil</Link>
                             </li>
                             <li onClick={logout} className={styles.logout}>
                                 Sair

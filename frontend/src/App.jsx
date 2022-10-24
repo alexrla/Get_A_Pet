@@ -4,12 +4,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/layout/Navbar/Navbar";
 import Footer from "./components/layout/Footer/Footer";
 import Container from "./components/layout/Container/Container";
+import Message from "./components/layout/Message/Message";
 
 // Pages - Auth
 import Home from "./pages/Home/Home";
 import Login from "./pages/Auth/Login/Login";
 import Register from "./pages/Auth/Register/Register";
-import Message from "./components/layout/Message/Message";
+import Profile from "./pages/User/Profile";
 
 // Context
 import { UserProvider } from "./context/UserContext";
@@ -25,6 +26,7 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/sign-in" element={<Login />} />
             <Route path="/sign-up" element={<Register />} />
+            <Route path="/user/profile" element={<Profile />} />
           </Routes>
         </Container>
         <Footer />
