@@ -6,6 +6,8 @@ import api from "../../utils/api";
 
 import useFlashMessage from "../../hooks/useFlashMessage";
 
+import RoundedImage from "../../components/layout/Rounded_Image/RoundedImage";
+
 // CSS
 import styles from "./Profile.module.css";
 import formStyle from "../../components/form/Form.module.css";
@@ -101,11 +103,13 @@ const Profile = () => {
             <div className={styles.profile_header}>
                 <h1>Perfil</h1>
                 {(user.image || preview) && (
-                    <img src={
+                    <RoundedImage 
+                        src={
                                 preview ? 
                                 URL.createObjectURL(preview) :
                                 `${process.env.REACT_APP_API}/images/users/${user.image}`
-                            } alt={`Usuário | ${user.name}`} />
+                        } 
+                        alt={`Usuário | ${user.name}`} />
                 )}
             </div>
             <form onSubmit={handleSubmit}>
