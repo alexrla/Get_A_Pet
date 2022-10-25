@@ -11,6 +11,7 @@ import Home from "./pages/Home/Home";
 import Login from "./pages/Auth/Login/Login";
 import Register from "./pages/Auth/Register/Register";
 import Profile from "./pages/User/Profile";
+import MyPets from "./pages/Pets/MyPets/MyPets";
 
 // Context
 import { UserProvider } from "./context/UserContext";
@@ -27,6 +28,7 @@ const App = () => {
             <Route path="/sign-in" element={<Login />} />
             <Route path="/sign-up" element={<Register />} />
             <Route path="/user/profile" element={<Profile />} />
+            <Route path="/pet/mypets" element={<MyPets />} />
           </Routes>
         </Container>
         <Footer />
