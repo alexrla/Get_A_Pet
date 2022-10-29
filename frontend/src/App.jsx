@@ -13,6 +13,7 @@ import Register from "./pages/Auth/Register/Register";
 import Profile from "./pages/User/Profile";
 import MyPets from "./pages/Pets/MyPets/MyPets";
 import AddPets from "./pages/Pets/AddPets/AddPets";
+import EditPet from "./pages/Pets/EditPet/EditPet";
 
 // Context
 import { UserProvider } from "./context/UserContext";
@@ -31,6 +32,7 @@ const App = () => {
             <Route path="/user/profile" element={<Profile />} />
             <Route path="/pet/mypets" element={<MyPets />} />
             <Route path="/pet/add" element={<AddPets />} />
+            <Route path="/pet/edit/:id" element={<EditPet />} />
           </Routes>
         </Container>
         <Footer />

@@ -18,7 +18,7 @@ const imageStore = multer.diskStorage({
 
         }
 
-        myCallback(null, `public/imgs/${folder}`);
+        myCallback(null, `public/images/${folder}`);
 
     },
     // Nome do arquivo após ser salvo

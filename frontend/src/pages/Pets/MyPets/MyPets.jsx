@@ -19,7 +19,7 @@ const MyPets= () => {
 
     const { setFlashMessage } = useFlashMessage();
 
-    console.log(pets);
+    // console.log(pets);
 
     useEffect(() => {
 
