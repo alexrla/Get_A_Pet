@@ -1,0 +1,9 @@
+.addpet_header {
+    margin: 2em 0;
+
+    text-align: center;
+}
+
+.addpet_header h1 {
+    margin-bottom: .5em;
+}

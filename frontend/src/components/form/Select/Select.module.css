@@ -11,17 +11,15 @@
 
     font-weight: bold;
 
-    margin-bottom: .3em;
+    margin-bottom: .6em;
 }
 
-.form_control input {
+.form_control select {
+    background-color: #FFF;
+
     border: 1px solid #777;
 
     border-radius: 5px;
 
     padding: .7em;
-}
-
-.form_control input::placeholder {
-    color: #7B7B7B;
 }
