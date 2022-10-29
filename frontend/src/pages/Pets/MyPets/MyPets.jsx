@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import RoundedImage from '../../../components/layout/Rounded_Image/RoundedImage';
 
@@ -18,6 +18,8 @@ const MyPets= () => {
     const [ token ] = useState(localStorage.getItem("token") || "");
 
     const { setFlashMessage } = useFlashMessage();
+
+    const navigate = useNavigate();
 
     // console.log(pets);
 
@@ -58,6 +60,28 @@ const MyPets= () => {
         setFlashMessage(data.message, msgType);
     }
 
+    async function concludeAdoption(id) {
+        let msgType = "success";
+
+        const data = await api.patch(`/pets/conclude/${id}`, {
+            headers: {
+                Authorization: `Bearer ${JSON.parse(token)}`
+            }
+        })
+        .then((response) => {
+            return response.data;
+        })
+        .catch((error) => {
+            msgType = "error";
+
+            return error.response.data;
+        });
+
+        setFlashMessage(data.message, msgType);
+
+        if(msgType !== "error") navigate("/");
+    }
+
     return (
         <section>
             <div className={styles.petlist_header}>
@@ -82,7 +106,10 @@ const MyPets= () => {
                                                 <>
                                                     {
                                                         pet.adopter && (
-                                                            <button className={styles.conclude_btn}>
+                                                            <button 
+                                                                className={styles.conclude_btn} 
+                                                                onClick={() => concludeAdoption(pet._id)}
+                                                            >
                                                                 Concluir adoção
                                                             </button>
                                                         )

@@ -113,3 +113,12 @@
     
     color: #FFF;
 } 
+
+/* MyAdoptions */
+.contacts {
+    margin-left: 2em;
+}
+
+.contacts p {
+    margin-bottom: .5em;
+}
