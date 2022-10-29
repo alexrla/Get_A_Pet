@@ -1,0 +1,115 @@
+.petlist_header {
+    align-items: center;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 2em;
+}
+
+.petlist_header h1 {
+    margin-bottom: 0;
+}
+
+.petlist_header a {
+    background-color: transparent;
+
+    border: 2px solid #16479D;
+
+    border-radius: 5px;
+
+    color: #16479D;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    padding: .5em .8em;
+
+    text-decoration: none;
+
+    transition: .5s;
+}
+
+.petlist_header a:hover {
+    background-color: #16479D;
+
+    color: #FFF;
+}
+
+.petlist_container {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.petlist_row {
+    align-items: center;
+
+    border-bottom: 1px solid #16479D;
+
+    display: flex;
+
+    margin: 1em;
+
+    padding: 1em;
+
+    width: 100%;
+}
+
+.petlist_row img {
+    margin-right: 1em;
+}
+
+.petlist_row span {
+    min-width: 100px;
+}
+
+.actions {
+    margin-left: auto;
+}
+
+.actions a,
+.actions button {
+    background-color: transparent;
+
+    border: 2px solid #16479D;
+
+    border-radius: 5px;
+
+    color: #16479D;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-left: 1em;
+
+    padding: 10px 15px;
+
+    text-decoration: none;
+
+    transition: .5s;
+}
+
+.actions a:hover,
+.actions button:hover {
+    background-color: #16479D;
+
+    color: #FFF;
+}
+
+.actions .conclude_btn {
+    border-color: #25B456;
+
+    color: #25B456;
+}
+
+.actions .conclude_btn:hover {
+    background-color: #25B456;
+    
+    color: #FFF;
+} 

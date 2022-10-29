@@ -1,7 +1,7 @@
 // CSS
 import styles from "./RoundedImage.module.css";
 
-const RoundedImage = ({ src, alt, width}) => {
+const RoundedImage = ({ src, alt, width }) => {
 
     return (
         <img 
