@@ -1,6 +1,8 @@
 .preview_pet_images {
     display: flex;
 
+    flex-wrap: wrap;
+
     justify-content: center;
 }
 

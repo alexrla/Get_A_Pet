@@ -14,6 +14,7 @@ import Profile from "./pages/User/Profile";
 import MyPets from "./pages/Pets/MyPets/MyPets";
 import AddPets from "./pages/Pets/AddPets/AddPets";
 import EditPet from "./pages/Pets/EditPet/EditPet";
+import PetDetails from "./pages/Pets/PetDetails/PetDetails";
 
 // Context
 import { UserProvider } from "./context/UserContext";
@@ -33,6 +34,7 @@ const App = () => {
             <Route path="/pet/mypets" element={<MyPets />} />
             <Route path="/pet/add" element={<AddPets />} />
             <Route path="/pet/edit/:id" element={<EditPet />} />
+            <Route path="/pet/:id" element={<PetDetails />} />
           </Routes>
         </Container>
         <Footer />
