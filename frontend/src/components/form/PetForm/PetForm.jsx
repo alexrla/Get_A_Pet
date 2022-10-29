@@ -29,9 +29,9 @@ const PetForm = ({ handleSubmit, petData, btnText }) => {
     function submit(event) {
         event.preventDefault();
 
-        console.log(pet);
+        // console.log(pet);
 
-        // handleSubmit(pet);
+        handleSubmit(pet);
     }
 
     return (
